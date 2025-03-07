@@ -1,9 +1,11 @@
 const express = require("express");
 const { createHandler } = require("graphql-http/lib/use/express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const schema = require("./schema/schema");
 
 const app = express();
+app.use(cors());
 const port = 4000;
 
 mongoose.connect(
